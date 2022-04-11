@@ -65,12 +65,19 @@ public class Main {
         SacemRegistration sacem3= new SacemRegistration("c486552");
         em.persist(sacem3);
 
+
+        // pour setter les clés étrangères : todo : faire aussi pour les autres classes
+        art1.setSacem(sacem1);
+        art2.setSacem(sacem2);
+        art3.setSacem(sacem3);
+
         em.getTransaction().commit();
 
         Manager m = em.find(Manager.class, 1);
         System.out.println(m);
 
         emf.close();
+        em.close();
 
     }
 }
