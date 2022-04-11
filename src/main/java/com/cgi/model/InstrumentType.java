@@ -22,6 +22,7 @@ public enum InstrumentType {
     private int sound;
 
     @OneToMany(mappedBy = "instruType")
+    @ToString.Exclude
     private List<Instrument> instruments = new ArrayList<>();
 
 }

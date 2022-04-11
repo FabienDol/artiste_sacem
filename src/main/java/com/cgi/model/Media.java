@@ -25,5 +25,6 @@ public class Media {
 
     @ManyToOne
     private Artist med;
+    //private List<Artist> med;
 
 }

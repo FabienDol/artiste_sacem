@@ -21,6 +21,7 @@ public class SacemRegistration {
     public String code;
 
     @OneToOne(mappedBy = "sacem")
+    @ToString.Exclude
     private Artist artist;
 
 }

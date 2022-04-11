@@ -37,9 +37,11 @@ public class Artist {
     private SacemRegistration sacem;
 
     @OneToMany(mappedBy = "med")
+    @ToString.Exclude
     private List<Media> medias = new ArrayList<>();
 
     @OneToMany(mappedBy = "art")
+    @ToString.Exclude
     private List<Instrument> instruments = new ArrayList<>();
 
     @ManyToOne

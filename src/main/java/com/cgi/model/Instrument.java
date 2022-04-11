@@ -28,9 +28,11 @@ public class Instrument {
     private Artist art;
 
     @ManyToMany(mappedBy = "playableInstruments")
+    @ToString.Exclude
     private List<Artist> players = new ArrayList<>();
 
     @OneToMany(mappedBy = "favoriteInstrument") //Foreign Key dans Artist
+    @ToString.Exclude
     private List<Artist> artistsFavInstru = new ArrayList<>();
 
 }

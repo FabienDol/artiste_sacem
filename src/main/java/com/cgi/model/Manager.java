@@ -21,6 +21,7 @@ public class Manager {
     public int budget;
 
     @OneToMany(mappedBy = "mng") //Foreign Key dans Artist
+    @ToString.Exclude
     private List<Artist> artists = new ArrayList<>();
-    
+
 }
