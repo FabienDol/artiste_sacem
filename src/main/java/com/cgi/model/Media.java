@@ -15,12 +15,23 @@ public class Media {
     public String name;
     public Date releaseDate;
 
-    @ManyToMany(mappedBy = "med")
-    private List<Artist> artists = new ArrayList<>();
+    @ManyToOne
+    private Artist med;
+
+    public Media() {
+    }
 
     public Media(String name, Date releaseDate) {
         this.name = name;
         this.releaseDate = releaseDate;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -39,12 +50,12 @@ public class Media {
         this.releaseDate = releaseDate;
     }
 
-    public List<Artist> getArtists() {
-        return artists;
+    public Artist getMed() {
+        return med;
     }
 
-    public void setArtists(List<Artist> artists) {
-        this.artists = artists;
+    public void setMed(Artist med) {
+        this.med = med;
     }
 
     @Override
@@ -53,7 +64,7 @@ public class Media {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", releaseDate=" + releaseDate +
-                ", artists=" + artists +
+                ", med=" + med +
                 '}';
     }
 }

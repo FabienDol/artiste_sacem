@@ -14,7 +14,10 @@ public class SacemRegistration {
     public String code;
 
     @OneToOne(mappedBy = "sacem")
-    private List<Artist> artists = new ArrayList<>();
+    private Artist artist;
+
+    public SacemRegistration() {
+    }
 
     public SacemRegistration(String code) {
         this.code = code;
@@ -36,12 +39,12 @@ public class SacemRegistration {
         this.code = code;
     }
 
-    public List<Artist> getArtists() {
-        return artists;
+    public Artist getArtist() {
+        return artist;
     }
 
-    public void setArtists(List<Artist> artists) {
-        this.artists = artists;
+    public void setArtist(Artist artist) {
+        this.artist = artist;
     }
 
     @Override
@@ -49,7 +52,7 @@ public class SacemRegistration {
         return "SacemRegistration{" +
                 "id=" + id +
                 ", code='" + code + '\'' +
-                ", artists=" + artists +
+                ", artist=" + artist +
                 '}';
     }
 }

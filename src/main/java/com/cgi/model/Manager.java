@@ -16,8 +16,35 @@ public class Manager {
     @OneToMany(mappedBy = "mng") //Foreign Key dans Artist
     private List<Artist> artists = new ArrayList<>();
 
+    public Manager() {
+    }
+
     public Manager(int budget) {
         this.budget = budget;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getBudget() {
+        return budget;
+    }
+
+    public void setBudget(int budget) {
+        this.budget = budget;
+    }
+
+    public List<Artist> getArtists() {
+        return artists;
+    }
+
+    public void setArtists(List<Artist> artists) {
+        this.artists = artists;
     }
 
     @Override
